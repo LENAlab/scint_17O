@@ -1,0 +1,19 @@
+# Macro file for the initialization phase of example B1
+# when running in interactive mode with visualization
+#
+# Set some default verbose
+#
+/control/verbose 2
+/control/saveHistory
+/run/verbose 2
+#
+# Visualization setting
+#/control/execute macs/viewers/OpenGLX.mac
+#/control/execute macs/viewers/OpenGLQt.mac
+/control/execute macs/viewers/OpenInvX.mac
+
+#/vis/open RayTracerX
+#/vis/open RayTracer
+
+
+#/run/beamOn/1000000

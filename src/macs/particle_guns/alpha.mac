@@ -1,0 +1,29 @@
+# Macro for simulating the decay of 60Co in the Target
+####################################################################
+/run/initialize
+#/grdm/verbose 0
+
+#/grdm/analogueMC 0
+#/grdm/nucleusLimits 60 60 27 27
+
+
+#/gps/particle alpha
+#/gps/pos/type Plane
+#/gps/pos/rot1 0 1 0
+#/gps/pos/rot2 0 0 1
+#/gps/pos/shape Circle
+#/gps/pos/centre 0. 0. -2. cm
+#/gps/pos/radius 0.1 cm
+#/gps/direction 0 0 1
+
+#/gps/energy 600 keV
+#/analysis/filename alpha_600.root
+#/run/beamOn 100000
+
+#/gps/energy 630 keV
+#/analysis/filename alpha_630.root
+#/run/beamOn 100000
+
+#/gps/energy 700 keV
+#/analysis/filename alpha_700.root
+#/run/beamOn 100000

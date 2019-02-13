@@ -1,0 +1,42 @@
+# Macro for simulating the decay of 60Co in the Target
+####################################################################
+/run/initialize
+#/tracking/verbose 1
+#/grdm/verbose 0
+
+/run/setCut 1. km  
+
+#/gps/ene/type Gauss
+#/gps/ene/sigma 10 keV
+
+# this position is 2 cm behind the target?
+/gps/particle ion
+/gps/ion 10 22 1 0.
+/gps/pos/type Plane
+#/gps/pos/rot1 0 1 0
+#/gps/pos/rot2 0 0 1
+/gps/pos/shape Circle
+/gps/pos/centre 0. 0. -2. cm
+/gps/pos/radius 0.1 cm
+/gps/direction 0 0 1
+
+
+/analysis/filename 22Ne_250.root
+#/gps/ene/mono 20 keV
+/gps/energy 35 keV
+/run/beamOn 10000
+
+##/analysis/filename 22Ne_370.root
+###/gps/ene/mono 40 keV
+##/gps/energy 370 keV
+##/run/beamOn 10000
+##
+##/analysis/filename 22Ne_390.root
+###/gps/ene/mono 60 keV
+##/gps/energy 390 keV
+##/run/beamOn 10000
+##
+##/analysis/filename 22Ne_380.root
+###/gps/ene/mono 80 keV
+##/gps/energy 380 keV
+##/run/beamOn 10000

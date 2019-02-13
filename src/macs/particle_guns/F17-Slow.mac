@@ -1,0 +1,19 @@
+/run/initialize
+#/grdm/verbose 0
+
+/gps/particle ion
+/gps/ion 9 17 9 0.
+/gps/pos/type Plane
+/gps/pos/shape Circle 
+/gps/pos/centre 0. 0. -10. cm
+/gps/pos/radius 1.0 cm
+/gps/direction 0. 0. 1.
+
+/gps/ene/type Gauss
+/gps/ene/mono 71.74 MeV
+/gps/ene/sigma 4.25 MeV
+#/gps/energy 750. MeV
+/analysis/filename F17TargStop.root
+/analysis/asciifile false
+
+/run/beamOn 100000

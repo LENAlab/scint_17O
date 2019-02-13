@@ -1,0 +1,70 @@
+# Macro for finding the Ge Efficiency at various energies
+###################################################################
+/run/initialize
+/grdm/verbose 0
+
+/gps/particle gamma
+/gps/pos/type Plane
+/gps/pos/shape Circle 
+/gps/pos/centre 0. 0. 0. cm
+/gps/pos/radius 0.05 cm
+/gps/ang/type iso
+
+/det/setGeHLength 46.5 mm
+/det/setGeRadius 40.0 mm
+/det/setGeOffset 7.0 mm
+/det/update
+
+/gps/energy 245. keV
+/analysis/filename analysis/energy/245.aida
+/run/beamOn 100000
+
+/gps/energy 662. keV
+/analysis/filename analysis/energy/662.aida
+#/run/beamOn 100000
+
+/gps/energy 835. keV
+/analysis/filename analysis/energy/835.aida
+#/run/beamOn 100000
+
+/gps/energy 1173. keV
+/analysis/filename analysis/energy/1173.aida
+#/run/beamOn 100000
+
+/gps/energy 964. keV
+/analysis/filename analysis/energy/964.aida
+#/run/beamOn 100000
+
+/gps/energy 1086. keV
+/analysis/filename analysis/energy/1086.aida
+#/run/beamOn 100000
+
+/gps/energy 1408. keV
+/analysis/filename analysis/energy/1408.aida
+#/run/beamOn 100000
+
+/gps/energy 2035. keV
+/analysis/filename analysis/energy/2035.aida
+#/run/beamOn 100000
+
+/gps/pos/radius 1.0 cm
+
+/gps/energy 2598. keV
+/analysis/filename analysis/energy/2598.aida
+#/run/beamOn 100000
+
+/gps/energy 3253. keV
+/analysis/filename analysis/energy/3253.aida
+#/run/beamOn 100000
+
+/gps/energy 5098. keV
+/analysis/filename analysis/energy/5098.aida
+#/run/beamOn 100000
+
+/gps/energy 7359. keV
+/analysis/filename analysis/energy/7359.aida
+#/run/beamOn 100000
+
+/gps/energy 10200. keV
+/analysis/filename analysis/energy/10200.aida
+#/run/beamOn 100000

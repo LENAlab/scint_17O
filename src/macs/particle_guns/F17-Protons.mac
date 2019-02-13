@@ -1,0 +1,59 @@
+/run/initialize
+#/grdm/verbose 0
+
+/analysis/filename F17Protons.root
+/analysis/asciifile false
+
+/gps/ene/type Mono
+/gps/source/add 1
+/gps/ene/mono 3.350 MeV
+/gps/particle proton
+/gps/pos/type Volume
+/gps/pos/shape Cylinder
+/gps/pos/centre 0. 0. 56.5 um
+/gps/pos/radius 1.0 cm
+/gps/pos/halfz 56.5 um
+/gps/direction 0. 0. 1.
+
+/gps/source/add 1
+/gps/ene/mono 3.620 MeV
+/gps/particle proton
+/gps/pos/type Volume
+/gps/pos/shape Cylinder
+/gps/pos/centre 0. 0. 56.5 um
+/gps/pos/radius 1.0 cm
+/gps/pos/halfz 56.5 um
+/gps/direction 0. 0. 1.
+
+/gps/source/add 1
+/gps/ene/mono 2.360 MeV
+/gps/particle proton
+/gps/pos/type Volume
+/gps/pos/shape Cylinder
+/gps/pos/centre 0. 0. 56.5 um
+/gps/pos/radius 1.0 cm
+/gps/pos/halfz 56.5 um
+/gps/direction 0. 0. 1.
+
+/gps/source/add 1
+/gps/ene/mono 4.010 MeV
+/gps/particle proton
+/gps/pos/type Volume
+/gps/pos/shape Cylinder
+/gps/pos/centre 0. 0. 56.5 um
+/gps/pos/radius 1.0 cm
+/gps/pos/halfz 56.5 um
+/gps/direction 0. 0. 1.
+
+/gps/source/add 1
+/gps/ene/mono 1.260 MeV
+/gps/particle proton
+/gps/pos/type Volume
+/gps/pos/shape Cylinder
+/gps/pos/centre 0. 0. 56.5 um
+/gps/pos/radius 1.0 cm
+/gps/pos/halfz 56.5 um
+/gps/direction 0. 0. 1.
+
+/run/beamOn 1000000
+#/gps/source/list

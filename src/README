@@ -1,0 +1,15 @@
+-- to start a tree browser --
+TFile f("SiDetector.root")
+fTree->StartViewer()
+
+
+-- To process the Geant4 output data into event data --
+move SiDetector.root into analysis directory
+in root:
+ .x Spectra2D.C+
+
+
+-- To analyse event data
+in root:
+ .L Spectra2D.C+
+ reAnalyse()

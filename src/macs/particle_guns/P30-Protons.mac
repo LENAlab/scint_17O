@@ -1,0 +1,139 @@
+/run/initialize
+#/grdm/verbose 0
+
+/analysis/filename P30Protons.root
+/analysis/asciifile false
+
+/gps/ene/type Mono
+/gps/source/add 1
+/gps/ene/mono 615. keV
+/gps/particle proton
+/gps/pos/type Volume
+/gps/pos/shape Cylinder
+/gps/pos/centre 0. 0. 10.0 um
+/gps/pos/radius 1.0 cm
+/gps/pos/halfz 10.0 um
+/gps/direction 0. 0. 1.
+
+/gps/source/add 1
+/gps/ene/mono 663. keV
+/gps/particle proton
+/gps/pos/type Volume
+/gps/pos/shape Cylinder
+/gps/pos/centre 0. 0. 10.0 um
+/gps/pos/radius 1.0 cm
+/gps/pos/halfz 10.0 um
+/gps/direction 0. 0. 1.
+
+/gps/source/add 1
+/gps/ene/mono 703. keV
+/gps/particle proton
+/gps/pos/type Volume
+/gps/pos/shape Cylinder
+/gps/pos/centre 0. 0. 10.0 um
+/gps/pos/radius 1.0 cm
+/gps/pos/halfz 10.0 um
+/gps/direction 0. 0. 1.
+
+/gps/source/add 1
+/gps/ene/mono 739. keV
+/gps/particle proton
+/gps/pos/type Volume
+/gps/pos/shape Cylinder
+/gps/pos/centre 0. 0. 10.0 um
+/gps/pos/radius 1.0 cm
+/gps/pos/halfz 10.0 um
+/gps/direction 0. 0. 1.
+
+/gps/source/add 1
+/gps/ene/mono 805. keV
+/gps/particle proton
+/gps/pos/type Volume
+/gps/pos/shape Cylinder
+/gps/pos/centre 0. 0. 10.0 um
+/gps/pos/radius 1.0 cm
+/gps/pos/halfz 10.0 um
+/gps/direction 0. 0. 1.
+
+/gps/source/add 1
+/gps/ene/mono 829. keV
+/gps/particle proton
+/gps/pos/type Volume
+/gps/pos/shape Cylinder
+/gps/pos/centre 0. 0. 10.0 um
+/gps/pos/radius 1.0 cm
+/gps/pos/halfz 10.0 um
+/gps/direction 0. 0. 1.
+
+/gps/source/add 1
+/gps/ene/mono 842. keV
+/gps/particle proton
+/gps/pos/type Volume
+/gps/pos/shape Cylinder
+/gps/pos/centre 0. 0. 10.0 um
+/gps/pos/radius 1.0 cm
+/gps/pos/halfz 10.0 um
+/gps/direction 0. 0. 1.
+
+/gps/source/add 1
+/gps/ene/mono 902. keV
+/gps/particle proton
+/gps/pos/type Volume
+/gps/pos/shape Cylinder
+/gps/pos/centre 0. 0. 10.0 um
+/gps/pos/radius 1.0 cm
+/gps/pos/halfz 10.0 um
+/gps/direction 0. 0. 1.
+
+/gps/source/add 1
+/gps/ene/mono 905. keV
+/gps/particle proton
+/gps/pos/type Volume
+/gps/pos/shape Cylinder
+/gps/pos/centre 0. 0. 10.0 um
+/gps/pos/radius 1.0 cm
+/gps/pos/halfz 10.0 um
+/gps/direction 0. 0. 1.
+
+/gps/source/add 1
+/gps/ene/mono 920. keV
+/gps/particle proton
+/gps/pos/type Volume
+/gps/pos/shape Cylinder
+/gps/pos/centre 0. 0. 10.0 um
+/gps/pos/radius 1.0 cm
+/gps/pos/halfz 10.0 um
+/gps/direction 0. 0. 1.
+
+/gps/source/add 1
+/gps/ene/mono 979. keV
+/gps/particle proton
+/gps/pos/type Volume
+/gps/pos/shape Cylinder
+/gps/pos/centre 0. 0. 10.0 um
+/gps/pos/radius 1.0 cm
+/gps/pos/halfz 10.0 um
+/gps/direction 0. 0. 1.
+
+/gps/source/add 1
+/gps/ene/mono 1023. keV
+/gps/particle proton
+/gps/pos/type Volume
+/gps/pos/shape Cylinder
+/gps/pos/centre 0. 0. 10.0 um
+/gps/pos/radius 1.0 cm
+/gps/pos/halfz 10.0 um
+/gps/direction 0. 0. 1.
+
+/gps/source/add 1
+/gps/ene/mono 1063. keV
+/gps/particle proton
+/gps/pos/type Volume
+/gps/pos/shape Cylinder
+/gps/pos/centre 0. 0. 10.0 um
+/gps/pos/radius 1.0 cm
+/gps/pos/halfz 10.0 um
+/gps/direction 0. 0. 1.
+
+/run/beamOn 1000000
+#/gps/source/list

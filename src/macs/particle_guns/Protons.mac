@@ -1,0 +1,21 @@
+/run/initialize
+#/grdm/verbose 0
+
+/gps/particle proton
+#/gps/ion 15 30 15 0.
+/gps/pos/type Volume
+/gps/pos/shape Cylinder
+/gps/pos/centre 0. 0. 10. um
+/gps/pos/radius 1.0 cm
+/gps/pos/halfz 10. um
+
+/gps/direction 0. 0. 1.
+
+/gps/ene/type Mono
+/gps/ene/mono 1. MeV
+#/gps/ene/sigma 512. keV
+#/gps/energy 750. MeV
+/analysis/filename Protons.root
+/analysis/asciifile false
+
+/run/beamOn 1000000

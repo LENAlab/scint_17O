@@ -1,0 +1,19 @@
+/run/initialize
+/tracking/verbose 0
+
+/analysis/filename SiDetector.root
+
+
+/gps/particle alpha
+##/gps/pos/confine "Target"
+/gps/pos/type Volume
+/gps/pos/shape Cylinder 
+/gps/pos/centre 0. 0. 0.249955 mm
+/gps/pos/radius 1 cm
+/gps/pos/halfz 0.01 mm
+
+/gps/ang/type iso
+/gps/energy .07 MeV
+
+
+/run/beamOn 1000
