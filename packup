@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Make a directory
+mkdir -p SiDetector/src
+mkdir -p SiDetector/include
+mkdir -p SiDetector/analysis
+mkdir -p SiDetector/macs
+
+# copy everything over
+cp -r src/src/*.cc SiDetector/src/
+cp -r src/include/*.hh SiDetector/include/
+cp -r src/analysis/SpectraTwoD.C SiDetector/analysis/
+cp -r src/analysis/doc SiDetector/analysis/
+cp -r src/CMakeLists.txt SiDetector/
+cp -r src/FindROOT.cmake SiDetector/
+cp -r src/README SiDetector/
+cp -r src/SiDetector.cc SiDetector/
+cp -r src/macs/vis.mac SiDetector/macs/
+cp -r src/macs/run1.mac SiDetector/macs/
+
+# zip it up
+tar -czvf SiDetector.tar.gz SiDetector
+
+# delete the directory
+rm -rf SiDetector

@@ -1,0 +1,114 @@
+% Created 2014-08-21 Thu 22:54
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\usepackage{fullpage} \usepackage{times} \usepackage{enumitem} \setlist{nolistsep,leftmargin=*}
+\author{Richard Longland}
+\date{2014-08-20 Wed}
+\title{Geant 4.10 Notes}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs 24.3.1 (Org mode 8.2)}}
+\begin{document}
+
+\maketitle
+
+\section{Install}
+\label{sec-1}
+\begin{itemize}
+\item Follow install instructions at
+    \url{http://geant4.web.cern.ch/geant4/UserDocumentation/UsersGuides/InstallationGuide/}
+\end{itemize}
+\section{CMake notes}
+\label{sec-2}
+\begin{itemize}
+\item Fast compile to check for coding errors add a \verb~/fast~ \\
+    \verb~make G4run/fast~
+\item Can make several build directories for each src directory for
+testing different things
+\item See
+    \url{http://geant4.web.cern.ch/geant4/UserDocumentation/UsersGuides/InstallationGuide/html/ch04s03.html}
+\item Good technique: have (i) release build and (ii) a dev build
+\begin{enumerate}
+\item Once you have something working:\\
+       \verb~cd LENAGe/build-release~,\\
+       \verb~cmake -DCMAKE_BUILD_TYPE=Release ../src~\\
+       \verb~make -j6~
+\item To develop something,\\
+       \verb~cd LENAGe/build-dev~,\\
+       \verb~cmake -DCMAKE_BUILD_TYPE=Debug ../src~\\
+       \verb~make -j6~, edit code, \verb~make -j6~, etc.
+\end{enumerate}
+\item Remember that git tracking of source code also needs to be kept
+track of
+\item \url{http://www.cmake.org/cmake/help/cmake_tutorial.html}
+\item Building a Geant4 application with CMake needs:
+\begin{itemize}
+\item A 'src' directory with everything in it (like the old LENAGe
+directory, for example)
+\item Note that there is another directory within this called 'src'
+with all the .cc files (again, like with the old code)
+\item CMakeLists.txt is the CMake script. Should be in the base 'src'
+(e.g., for example B1 it's in \verb,~/geant4/B1/src,)
+\item A separate 'build' directory (\verb,~/geant4/B1/build,)
+\end{itemize}
+\item Example B1 is a good place to start
+\begin{itemize}
+\item \verb,mkdir ~/geant4/B1/src,
+\item \verb,cp -r /opt/geant4/geant4.10.00.p01-src/examples/basic/B1/* ~/geant4/B1/src,
+\item \verb,mkdir ~/geant4/B1/build,
+\item \verb,cd ~/geant4/B1/build,
+\item \verb~cmake ../src~
+\item \verb~make~
+\end{itemize}
+\end{itemize}
+
+\section{THM Notes}
+\label{sec-3}
+\begin{itemize}
+\item Copy CMakeLists.txt over from example B1
+\item Comment out the \verb~add_custom_target~ command near the bottom. This
+screws up if the executable is named the same as the project
+\item Copying scripts directory is now much easier than the
+    \verb~configure_file~ stuff in the B1 example. Now we can use \verb~file(COPY~
+\begin{itemize}
+\item See line beginning with "set(SCRIPTS" in THM for an example
+\end{itemize}
+\item Added check for datasets, line beginning with "foreach(dsname"
+\item Added check for multithreading, line begins with
+"\verb~find_package(Geant4 COMPONENTS multithreaded~"
+\item To use root, we need the FindROOT.cmake file (copied from the Root
+FAQ)
+\item Add root include directories and lib directories (see section
+starting with "include(FindROOT.cmake)")
+\item Needed to add G4SystemOfUnits.hh to a bunch of files since it was
+removed from the standard linking
+\item Same for G4PhysicalConstants (for example, for 'pi',
+'proton$_{\text{mass}}$$_{\text{c2'}}$, etc.)
+\item Make sure that \verb~target_link_libraries~ also points to the
+    \verb~${ROOT_LIBRARIES}~ (see line beginning "\verb~target_link_libraries~")
+\item To make the dictionary needed to output root files
+\begin{itemize}
+\item Add an \verb~EXECUTE_PROCESS~ to compile the dictionary in \verb~CMakeList.txt~
+\item See \url{http://hypernews.slac.stanford.edu/HyperNews/geant4/get/analysis/410/3/1.html}
+\item Make sure it's referred to in \verb~add_executable~\\
+      \verb~add_executable(THM THM.cc RootOutputDataDICT.cxx ${sources} ${headers})~
+\end{itemize}
+\end{itemize}
+% Emacs 24.3.1 (Org mode 8.2)
+\end{document}
